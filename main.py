@@ -12,11 +12,12 @@ def run_pipeline(limit: int = 10):
         item["title_encrypted"] = encrypt_text(item["title"])
         del item["title"]
 
+save_json(enriched, "output.json")
+save_csv(enriched, "output.csv")
+print("Saved: output.json and output.csv")
+
         print(item)
 
 
 if __name__ == "__main__":
     run_pipeline(limit=5)
-save_json(enriched, "output.json")
-save_csv(enriched, "output.csv")
-print("Saved: output.json and output.csv")
