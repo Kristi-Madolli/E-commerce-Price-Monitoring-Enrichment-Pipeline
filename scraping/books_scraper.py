@@ -1,4 +1,5 @@
 import requests
+import re
 from bs4 import BeautifulSoup
 from typing import List, Dict
 
@@ -35,12 +36,15 @@ def scrape_books(limit: int = 20) -> List[Dict]:
     for article in articles[:limit]:
         try:
             title = article.h3.a["title"]
-            price = article.find("p", class_="price_color").text.replace("£", "")
+            price_text = article.find("p", class_="price_color").get_text(strip=True)
+            price_clean = re.sub(r"[^0-9.]", "", price_text)   # heq £, Â, etj.
+            price = float(price_clean)
+
             availability = article.find("p", class_="instock availability").text.strip()
 
             books.append({
                 "title": title,
-                "price_gbp": float(price),
+                "price_gbp": price,
                 "availability": availability,
                 "source": "BooksToScrape"
             })
@@ -54,4 +58,3 @@ if __name__ == "__main__":
     data = scrape_books(5)
     for book in data:
         print(book)
-
