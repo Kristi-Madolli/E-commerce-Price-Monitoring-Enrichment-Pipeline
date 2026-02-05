@@ -1,1 +1,2 @@
-# Project dependencies will be listed here
+requests
+beautifulsoup4
