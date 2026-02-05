@@ -1,7 +1,7 @@
 import requests
 from typing import Dict, Optional
 
-FRANKFURTER_BASE_URL = "https://api.frankfurter.dev"
+FRANKFURTER_BASE_URL = "https://api.frankfurter.dev/v1"
 
 
 def get_latest_rates(base: str = "GBP") -> Optional[Dict[str, float]]:
