@@ -1,23 +1,20 @@
 from typing import List, Dict
-from api.currency_api import convert_amount
+from api.currency_api import get_latest_rates
 
 
 def enrich_books_with_currency(books: List[Dict], targets=("EUR", "ALL")) -> List[Dict]:
-    """
-    Adds converted prices to each book dict (price_eur, price_all).
-    If conversion fails, fields are set to None.
-    """
+    rates = get_latest_rates(base="GBP") or {}
     enriched = []
 
     for b in books:
         price_gbp = b.get("price_gbp")
         out = dict(b)
 
-        if isinstance(price_gbp, (int, float)):
-            for t in targets:
-                out[f"price_{t.lower()}"] = convert_amount(price_gbp, "GBP", t)
-        else:
-            for t in targets:
+        for t in targets:
+            rate = rates.get(t)
+            if isinstance(price_gbp, (int, float)) and rate is not None:
+                out[f"price_{t.lower()}"] = round(float(price_gbp) * float(rate), 2)
+            else:
                 out[f"price_{t.lower()}"] = None
 
         enriched.append(out)
