@@ -1,16 +1,16 @@
 from scraping.books_scraper import scrape_books
 from processing.transformer import enrich_books_with_currency
+from security.encryption import encrypt_text
 
 
 def run_pipeline(limit: int = 10):
     books = scrape_books(limit=limit)
     enriched = enrich_books_with_currency(books, targets=("EUR", "ALL"))
-    from api.currency_api import get_latest_rates
-print("Has ALL rate?", "ALL" in (get_latest_rates("GBP") or {}))
 
-
-    # For now: just print results (storage + security in next steps)
     for item in enriched:
+        item["title_encrypted"] = encrypt_text(item["title"])
+        del item["title"]
+
         print(item)
 
 
