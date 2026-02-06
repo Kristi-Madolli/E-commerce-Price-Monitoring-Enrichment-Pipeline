@@ -47,7 +47,7 @@ Ekzekuto: python -m pip install -r requirements.txt
 2) Krijimi i .env (nëse nuk krijohet automatikisht)
 Krijo një file .env në root dhe vendos:
 Ekzekuto: FERNET_KEY=KEY_QE_GJENERON
-3) Gjenero key me: Ekzekuto: 
+3) Gjenero key me:Ekzekuto: 
 python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"
 4) Ekzekutimi i pipeline-it: 
 Ekzekuto: python main.py
