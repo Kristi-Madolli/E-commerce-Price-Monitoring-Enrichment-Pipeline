@@ -45,18 +45,10 @@ Sigurohuni që Python dhe Git janë të instaluara dhe të aksesueshme nga comma
 1) Shkarko projektin si ZIP file
 2) Bej extract, file ZIP qe shkarkove
 3) Hap ne terminal file qe more mbas extract
-4) EKZEKUTO locationin ku do ta klonosh me comanden: cd FILE=QE=DO
+4) EKZEKUTO locationin ku do ta klonosh me comanden: cd C:\Users\User\Downloads
 5) EKZEKUTO: git clone https://github.com/Kristi-Madolli/E-commerce-Price-Monitoring-Enrichment-Pipeline.git
 6) File qe perfiton mbas klonimit hape ne terminal
-7) Ndiq gjithe hapat e meposhtem ne terminalin e fundit qe hape
-1) Instalimi i varësive nga root i projektit (ku është main.py)    
-EKZEKUTO: python -m pip install -r requirements.txt
-2) Krijimi i .env (nëse nuk krijohet automatikisht)
-Krijo një file .env në root dhe vendos:
-EKZEKUTO: FERNET_KEY=KEY_QE_GJENERON
-3) Gjenero key me:
-EKZEKUTO: python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"
-5) Ekzekutimi i pipeline-it: 
+7) Ekzekutimi i pipeline-it: 
 EKZEKUTO: python main.py
 
 
