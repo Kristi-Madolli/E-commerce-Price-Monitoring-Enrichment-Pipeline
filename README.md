@@ -42,12 +42,13 @@ Për ekzekutimin e projektit kërkohen:
 Sigurohuni që Python dhe Git janë të instaluara dhe të aksesueshme nga command line.
 
 ## Si të Ekzekutohet Projekti
-1) Instalimi i varësive nga root i projektit (ku është main.py)
-   ekzekuto: python -m pip install -r requirements.txt
+1) Instalimi i varësive nga root i projektit (ku është main.py)    
+Ekzekuto: python -m pip install -r requirements.txt
 3) Krijimi i .env (nëse nuk krijohet automatikisht)
-Krijo një file .env në root dhe vendos:  FERNET_KEY=KEY_QE_GJENERON
+Krijo një file .env në root dhe vendos:
+Ekzekuto: FERNET_KEY=KEY_QE_GJENERON
 Gjenero key me:  python -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"
-4) Ekzekutimi i pipeline-it: python main.py
+5) Ekzekutimi i pipeline-it: python main.py
 
 
 ## Output
