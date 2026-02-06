@@ -32,8 +32,7 @@ Website → Scraper → Raw Data → API Enrichment → Processing → Encryptio
 *.env.example shërben si udhëzues (pa sekret).
 *Nëse FERNET_KEY mungon, moduli i sigurisë mund ta gjenerojë automatikisht gjatë ekzekutimit (nëse është aktivizuar në security/encryption.py).
 
-Kërkesat Paraprake per ekzekutim (Prerequisites)
-## Kërkesat Paraprake
+## Kërkesat Paraprake per ekzekutim (Prerequisites)
 Për ekzekutimin e projektit kërkohen:
 
 - **Python 3.10 ose më i ri**
@@ -42,7 +41,7 @@ Për ekzekutimin e projektit kërkohen:
 
 Sigurohuni që Python dhe Git janë të instaluara dhe të aksesueshme nga command line.
 
-Si të Ekzekutohet Projekti
+## Si të Ekzekutohet Projekti
 1) Instalimi i varësive - Nga root i projektit (ku është main.py):
 python -m pip install -r requirements.txt
 2) Krijimi i .env (nëse nuk krijohet automatikisht)
@@ -51,14 +50,14 @@ Gjenero key me:  python -c "from cryptography.fernet import Fernet; print(Fernet
 3) Ekzekutimi i pipeline-it: python main.py
 
 
-Output
+## Output
 Pas ekzekutimit krijohen: *output.json, *output.csv
 Këto përmbajnë të dhëna të pasuruara dhe me titull të enkriptuar (title_encrypted).
 
-Shënime
+## Shënime
 *price_all mund të dalë None nëse API nuk ofron kurs për ALL në atë moment. Kjo trajtohet në mënyrë të kontrolluar (pa prishur pipeline-in).
 *Projekti ka strukturë modulare dhe histori zhvillimi me commit-e.
 
-Autori
+## Autori
 Kristi Madolli
 
