@@ -42,7 +42,7 @@ Për ekzekutimin e projektit kërkohen:
 Sigurohuni që Python dhe Git janë të instaluara dhe të aksesueshme nga command line.
 
 ## Si të Ekzekutohet Projekti
-1) Shkarko prjektin si ZIP file
+1) Shkarko projektin si ZIP file
 2) Bej extract, file ZIP qe shkarkove
 3) Hap ne terminal file qe more mbas extract
 4) EKZEKUTO locationin ku do ta klonosh me comanden: cd FILE=QE=DO
