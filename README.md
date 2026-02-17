@@ -49,7 +49,7 @@ Sigurohuni që Python dhe Git janë të instaluara dhe të aksesueshme nga comma
 5) EKZEKUTO: git clone https://github.com/Kristi-Madolli/E-commerce-Price-Monitoring-Enrichment-Pipeline.git
 6) File qe perfiton mbas klonimit hape ne terminal
 7) Ekzekutimi i pipeline-it: 
-EKZEKUTO: python main.py
+EKZEKUTO: python main.py  ose  py main.py
 
 
 ## Output
