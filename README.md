@@ -10,27 +10,27 @@ Pipeline ekzekutohet nga main.py.
 
 
 ## Arkitektura e Projektit
-*scraping/ – Nxjerr të dhënat nga website-i (titull, çmim, availability)
-*api/ – Merr kurset e këmbimit (FX rates) nga API (me fallback)
-*processing/ – Pastron/validon dhe pasuron të dhënat (GBP → EUR/ALL)
-*security/ – Enkriptim me Fernet (AES) dhe menaxhim i çelësit nga .env
-*storage/ – Ruajtje e output-it në JSON dhe CSV
-*main.py – Orkestron të gjithë rrjedhën
+1) scraping/ – Nxjerr të dhënat nga website-i (titull, çmim, availability)
+2) api/ – Merr kurset e këmbimit (FX rates) nga API (me fallback)
+3) processing/ – Pastron/validon dhe pasuron të dhënat (GBP → EUR/ALL)
+4) security/ – Enkriptim me Fernet (AES) dhe menaxhim i çelësit nga .env
+5) storage/ – Ruajtje e output-it në JSON dhe CSV
+6) main.py – Orkestron të gjithë rrjedhën
 
 Rrjedha e të Dhënave
 Website → Scraper → Raw Data → API Enrichment → Processing → Encryption → Storage (JSON/CSV)
 
 ## Teknologjitë:
-*Python
-*requests, beautifulsoup4 (scraping + API calls)
-*Currency Exchange API (me fallback)
-*cryptography (Fernet AES) për enkriptim
-*python-dotenv për leximin e .env
+- Python
+- requests, beautifulsoup4 (scraping + API calls)
+- Currency Exchange API (me fallback)
+- cryptography (Fernet AES) për enkriptim
+- python-dotenv për leximin e .env
 
 ## Siguria
-*Çelësi i enkriptimit ruhet në .env (lokalisht) dhe nuk ngarkohet në GitHub.
-*.env.example shërben si udhëzues (pa sekret).
-*Nëse FERNET_KEY mungon, moduli i sigurisë mund ta gjenerojë automatikisht gjatë ekzekutimit (nëse është aktivizuar në security/encryption.py).
+1) Çelësi i enkriptimit ruhet në .env (lokalisht) dhe nuk ngarkohet në GitHub.
+2) .env.example shërben si udhëzues (pa sekret).
+3) Nëse FERNET_KEY mungon, moduli i sigurisë mund ta gjenerojë automatikisht gjatë ekzekutimit (nëse është aktivizuar në security/encryption.py).
 
 ## Kërkesat Paraprake per ekzekutim (Prerequisites)
 Për ekzekutimin e projektit kërkohen:
@@ -57,8 +57,8 @@ Pas ekzekutimit krijohen: *output.json, *output.csv
 Këto përmbajnë të dhëna të pasuruara dhe me titull të enkriptuar (title_encrypted).
 
 ## Shënime
-*price_all mund të dalë None nëse API nuk ofron kurs për ALL në atë moment. Kjo trajtohet në mënyrë të kontrolluar (pa prishur pipeline-in).
-*Projekti ka strukturë modulare dhe histori zhvillimi me commit-e.
+- price_all mund të dalë None nëse API nuk ofron kurs për ALL në atë moment. Kjo trajtohet në mënyrë të kontrolluar (pa prishur pipeline-in).
+- Projekti ka strukturë modulare dhe histori zhvillimi me commit-e.
 
 ## Autori
 Kristi Madolli
