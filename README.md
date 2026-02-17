@@ -2,10 +2,10 @@
 
 ## Përshkrim
 Ky projekt implementon një pipeline modular për përpunimin e të dhënave, i cili:
-1.bën web scraping të produkteve (libra) nga një website publik demo
-2.bën pasurim (enrichment) të të dhënave duke konvertuar çmimet me një Currency Exchange API (me fallback nëse API kryesore bie)
-3.bën enkriptim të një fushe sensitive (titulli i produktit) me Fernet (AES)
-4.ruan rezultatet në JSON dhe CSV.
+1) bën web scraping të produkteve (libra) nga një website publik demo
+2) bën pasurim (enrichment) të të dhënave duke konvertuar çmimet me një Currency Exchange API (me fallback nëse API kryesore bie)
+3) bën enkriptim të një fushe sensitive (titulli i produktit) me Fernet (AES)
+4) ruan rezultatet në JSON dhe CSV.
 Pipeline ekzekutohet nga main.py.
 
 
